@@ -37,7 +37,7 @@ defmodule FacebookMessenger.Phoenix.Mixfile do
   defp deps do
     d =
     [{:phoenix, "~> 1.3.0-rc.2"},
-     {:facebook_messenger, "~> 0.4.0"},
+     {:facebook_messenger, "~> 0.4.0", override: true},
      {:inch_ex, only: :docs},
      {:ex_doc, "~> 0.7", only: :dev},
      {:earmark, "~> 0.1", only: :docs}]
@@ -45,7 +45,7 @@ defmodule FacebookMessenger.Phoenix.Mixfile do
      if Mix.env == :test do
       [{:coverex, "~> 1.4.8", only: :test}, {:poison, "~> 2.1.0", override: true} | d]
     else
-      [{:poison, "~> 2.2.0"} | d]
+      [{:poison, "~> 2.2.0", override: true} | d]
     end
   end
 
